@@ -1,0 +1,387 @@
+<!--
+--  
+--  BitCamp Assignment No.7 - Equalizer Landing Page
+--
+--  Made by David Abakelia-Chartia (acdavit)
+--
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
+  <title>Frontend Mentor | Equalizer landing page</title>
+  <style>
+		@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;700&display=swap');
+		:root{
+			--dark-blue: #191826;
+			--orange: #fa7453;
+			--white: #fcfaf0;
+		}
+		#background-pattern{display: none;}
+  	body{
+  		max-width: 100vw;
+  		overflow-x: hidden;
+  		margin: 0;
+			font-family: 'IBM Plex Sans', sans-serif;
+  	}
+  	body{
+  		color: var(--dark-blue);
+  	}
+  	#background{
+  		position: absolute;
+  		top: -30vh;
+  		right: -180px;
+  		z-index: -1;
+  	}
+  	#logo{
+  		margin-bottom: 64px;
+  	}
+  	#page-beginning{
+  		width: 327px;
+  		margin: 40px auto;
+  	}
+  	#page-beginning h1{
+  		font-weight: 700;
+  		font-size: 40px;
+  		line-height: 48px;
+  		letter-spacing: -0.45px;
+  		margin: 0;
+  	}
+  	#page-beginning p{
+  		font-weight: 400;
+  		font-size: 16px;
+  		line-height: 26px;
+  		margin: 0;
+  		margin-top: 20px;
+  	}
+  	#illustration-card{
+  		width: 100vw;
+  		height: 600px;
+  		margin: 0;
+  		margin-top: 166px;
+  		background-color: var(--dark-blue);
+  		display: flex;
+  		flex-direction: row;
+  		justify-content: center;
+  		align-items: flex-start;
+  		border-radius: 12px;
+  	}
+  	#pattern {max-width: 280px;}
+  	#illustration-app{
+  		max-width: 208px;
+  		position: absolute;
+  		top: 524px;
+  	}
+  	
+  	#download-card{
+  		width: 100vw;
+  		margin: 0;
+  		padding-top: 48px;
+  		padding-bottom: 48px;
+  		border-radius: 12px;
+  		background-color: var(--orange);
+  		color: var(--white);
+  		position: relative;
+  		top: -220px;
+  		z-index: 2;
+  	}
+  	
+  	#text-div{
+  		max-width: 302px;
+  		margin: 0 auto;
+  	}
+  	
+  	#download-div{
+  		max-width: 296px;
+  		margin: 0 auto;
+  		margin-top: 36px;
+  	}
+  	
+  	#text-div > h1{
+  		margin: 0;
+  		font-size: 32px;
+  		line-height: 40px;
+  	}
+  	#text-div > p{
+  		font-size: 18px;
+  		line-height: 28px;
+  		margin-top: 12px;
+  	}
+  	
+  	#download-div > h1{
+  		font-weight: 400;
+			font-size: 20px;
+			line-height: 32px;
+			margin-top: 36px;
+			margin-bottom: 32px;
+  	}
+  	
+  	#price{
+  		font-weight: 700;
+			font-size: 65px;
+			line-height: 52px;
+  	}
+  	
+  	#download-div > button {
+  		width: 100%;
+  		display: flex;
+  		flex-direction: row;
+  		justify-content: center;
+  		align-items: center;
+  		border: none;
+			height: 61px;
+			border-radius: 12px;
+			margin: 16px 0;
+			font-weight: 700;
+			font-size: 18px;
+			line-height: 32px;
+			text-align: center;
+			letter-spacing: -0.18px;
+  	}
+  	
+  	#download-div > button > img{
+  		margin: 7.92px;
+  	}
+  	
+  	#ios{
+			background-color: var(--dark-blue);
+			color: var(--white);
+  	}
+  	
+  	#android{
+  		background-color: var(--white);
+  		color: var(--dark-blue);
+  	}
+  	
+  	footer{
+  		max-width: 327px;
+  		margin: 80px auto;
+  		margin-top: 20px;
+  	}
+  	
+  	footer > img{
+  		margin-bottom: 32px;
+  	}
+  	footer > p{
+  		margin: 0;
+  		line-height: 26px;
+  		size: 16px;
+  	}
+  	#email{
+  		font-weight: 700;
+  	}
+  	#sm-icons{
+  		margin-top: 64px;
+  	}
+  	#sm-icons > img{
+  		margin: 0 10px;
+  	}
+  	
+  	@media screen and (min-width: 770px){
+  		#background{
+  			content: url("./assets/bg-main-tablet.png");
+  			position: absolute;
+  			top: -250px;
+  			right: -100px;
+  		}
+  		#background-pattern{
+  			display: inline;
+  			position: absolute;
+  			top: -32px;
+  			right: -32px;
+  			z-index: -1;
+  			content: url("./assets/bg-pattern-1.svg");
+  		}
+  		#logo{
+  			margin-bottom: 95px;
+  		}
+  		#page-beginning{
+  			width: 696px;
+  			margin: 60px auto;
+  		}
+  		#page-beginning > h1, #page-beginning > p{
+  			max-width: 520px;
+  		}
+  		#page-beginning > h1{
+  			font-size: 64px;
+  			line-height: 64px;
+  			letter-spacing: -0.72px;
+  		}
+  		#page-beginning > p{
+  			margin-top: 28px;
+  			font-size: 18px;
+  			line-height: 28px;
+  		}
+  		#illustration-card{
+  			width: 696px;
+  			height: 600px;
+  			margin: 249px auto;
+  		}
+  		#illustration-app{
+  			position: absolute;
+  			top: 632px;
+  			max-width: 270px;
+  			left: calc(50vw - 284px);
+  		}
+  		#pattern {max-width: 100%;}
+  		#download-card{
+  			width: 399px;
+  		}
+  		#download-card > p{
+  			margin-bottom: 36px;
+  		}
+  		#download-card{
+  			position: absolute;
+  			top: 920px;
+  			left: calc(50vw - 110px);
+
+  		}
+  		#cards{
+  			max-height: 100%;
+  		}
+  		
+  		footer{
+  			max-width: 696px;
+  			margin: 0px auto;
+  			margin-top: 20px;
+  		}
+  		#sm-icons{
+  			position: relative;
+  			bottom: 115px;
+  			left: 586px;
+  		}
+  	}
+  	@media screen and (min-width: 1200px){
+  		#background{
+  			content: url("./assets/bg-main-desktop.png");
+  		}
+  		#page-beginning{
+  			width: 1110px;
+  		}
+  		#page-beginning > h1, #page-beginning > p{
+  			max-width: 825px;
+  		}
+  		#page-beginning > h1{
+  			font-size: 88px;
+  			line-height: 88px;
+  			letter-spacing: -1px;
+  			max-width: 1015px;
+  		}
+  		#page-beginning > p{
+  			margin-top: 40px;
+  			font-size: 20px;
+  			line-height: 34px;
+  		}
+  		#illustration-card{
+  			width: 1110px;
+  			margin: 321px auto;
+  		}
+  		#illustration-app{
+  			top: 665px;
+  			max-width: 280px;
+  			left: calc(50vw - 453px);
+  		}
+  		#pattern{
+  			max-width: 100%;
+  			position: relative;
+  			right: 100px;
+  		}
+  		#download-card{
+  			width: 446px;
+  			height: 509px;
+  			padding: 0;
+  			padding-top: 58px;
+  			padding-bottom: 58px;
+  			position: absolute;
+  			top: 920px;
+  			left: 50vw;
+  		}
+  		
+  		#text-div > h1{
+  			font-size: 40px;
+  			line-height: 52px;
+  		}
+  		
+  		#text-div > p{
+  			margin-top: 22px;
+  			font-size: 20px;
+  			line-height: 34px;
+  		}
+  		  		
+  		#text-div, #download-div{
+  			max-width: 333px;
+  		}
+  		
+  		#cards{
+  			max-height: 100%;
+  		}
+  		
+  		footer{
+  			max-width: 1110px;
+  			margin: 20px auto;
+  			margin-top: 20px;
+  			display: flex;
+  			justify-content: space-between;
+  			align-items: start;
+  		}
+  		
+  		#sm-icons{
+  			position: relative;
+  			bottom: 0;
+  			left: 0;
+  		}
+  	}
+  </style>
+</head>
+<body>
+	<img id="background" src="./assets/bg-main-mobile.png"></img>
+	<img id="background-pattern"></img>
+	<section id="page-beginning">
+		<img src="./assets/logo.svg" id="logo"></img>
+		<h1>We make your music sound extraordinary.</h1>
+		<p>A system audio equalizer specifically designed for Android and iOS. Freely tune the 
+  way your music sounds with a professional grade parametric EQ & volume mixer. Control 
+  bass, mids, treble, gain control, reverb, and more!</p>
+	</section>
+	
+	<div style="max-height: 1000px" id="cards">
+		<section id="illustration-card">
+			<img src="./assets/bg-pattern-2.svg" id="pattern"></img>
+			<img src="./assets/illustration-app.png" id="illustration-app"></img>
+		</section>
+		<section id="download-card">
+			<div id="text-div">
+				<h1>Premium EQ</h1>
+				<p>Get expert-level control with a robust equalizer, volume mixer, and spatial audio. Take your listening experience to a whole new level and access all our incredible features!</p>
+			</div>
+			<div id="download-div">
+				<h1><span id="price">$4</span> / month</h1>
+				<button id="ios">
+					<img src="./assets/icon-apple.svg"></img>
+					iOS Download
+				</button>
+				<button id="android">
+					<img src="./assets/icon-android.svg"></img>
+					Android Download
+				</button>
+			</div>
+		</section>	
+	</div>
+
+	<footer>
+		<img src="./assets/logo.svg"></img>
+		<div id="contact">
+			<p>All rights reserved © Equalizer 2021</p>
+  		<p>Have any problems? Contact us via social media or email us at<br><span id="email">equalizer@example.com</span></p>
+  	</div>
+  	<div id="sm-icons">
+  		<img src="./assets/icon-facebook.svg" style="margin-left: 0"></img>
+  		<img src="./assets/icon-instagram.svg"></img>
+  		<img src="./assets/icon-twitter.svg"></img>
+  	</div>
+	</footer>
+</body>
+</html>
